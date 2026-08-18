@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#68cfc9" />
+    <meta name="description" content="5つの食材を上手に使い回して、1週間の夕食献立を提案します。" />
+    <title>5つで1週間の献立</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__sparkle" aria-hidden="true">✦</div>
+      <p class="eyebrow">毎日の「何にしよう？」を、軽やかに</p>
+      <h1><span>5つで</span><br />1週間の献立</h1>
+      <p class="hero__lead">選んだ5つの食材を上手に使い回して、<br />7日分の夕食をご提案します。</p>
+      <div class="hero__badge">かんたん <b>・</b> むだなく <b>・</b> おいしく</div>
+    </header>
+
+    <main>
+      <section class="budget section" id="budget-section" aria-labelledby="budget-title">
+        <div class="section-heading">
+          <span class="section-heading__number">01</span>
+          <div><p>まずはここから</p><h2 id="budget-title">今週の予算を選ぶ</h2></div>
+        </div>
+        <p class="section-intro">ご家庭に合わせて、お好みのコースをお選びください。</p>
+        <div class="budget-grid">
+          <button class="budget-card budget-card--saving" data-budget="5000" type="button">
+            <span class="budget-card__icon" aria-hidden="true">♧</span>
+            <span class="budget-card__label">節約を楽しむ</span>
+            <strong><span>5,000</span>円コース</strong>
+            <span class="budget-card__desc">定番食材をかしこく活用<br />お財布にやさしい1週間</span>
+            <span class="budget-card__action">このコースで見る <span>›</span></span>
+          </button>
+          <button class="budget-card budget-card--rich" data-budget="10000" type="button">
+            <span class="recommend">おすすめ</span>
+            <span class="budget-card__icon" aria-hidden="true">♕</span>
+            <span class="budget-card__label">ちょっと豊かに</span>
+            <strong><span>10,000</span>円コース</strong>
+            <span class="budget-card__desc">食材の種類と満足感をプラス<br />彩り豊かな1週間</span>
+            <span class="budget-card__action">このコースで見る <span>›</span></span>
+          </button>
+        </div>
+        <p class="price-note">※食材価格は地域・店舗・時期によって異なります。表示金額は目安です。</p>
+      </section>
+
+      <section class="plan section" id="plan" aria-labelledby="plan-title" hidden>
+        <div class="section-heading">
+          <span class="section-heading__number">02</span>
+          <div><p id="course-label">5,000円コース</p><h2 id="plan-title">今週の5つの食材</h2></div>
+        </div>
+        <p class="section-intro">この5つを中心に、1週間おいしく使い回します。</p>
+        <div class="ingredients" id="ingredients"></div>
+
+        <div class="plan-heading">
+          <p>MONDAY — SUNDAY</p>
+          <h2>1週間の夕食献立</h2>
+          <span>無理なく作れる、やさしいレシピです</span>
+        </div>
+        <div class="menu-list" id="menu-list"></div>
+
+        <div class="plan-actions">
+          <button class="primary-button" id="shopping-button" type="button"><span aria-hidden="true">▤</span> 買い物リストを見る</button>
+          <button class="secondary-button" id="shuffle-button" type="button"><span aria-hidden="true">↻</span> 別の5食材で作り直す</button>
+        </div>
+        <p class="price-note">※食材価格は地域・店舗・時期によって異なります。表示金額は目安です。</p>
+      </section>
+
+      <section class="cta section" aria-labelledby="cta-title">
+        <div class="cta__ornament" aria-hidden="true">✦</div>
+        <p>毎日に、小さなときめきを</p>
+        <h2 id="cta-title">もっと楽しく、<br />暮らしとお金を整えたい方へ</h2>
+        <p class="cta__guide">気になる方はこちらからどうぞ</p>
+        <div class="cta__links">
+          <a href="https://x.gd/mid19" target="_blank" rel="noopener noreferrer" class="cta-link">
+            <span class="cta-link__icon" aria-hidden="true">♧</span><span><small>【私のオープンチャット】</small><strong>216名参加はこちら</strong></span><b aria-hidden="true">›</b>
+          </a>
+          <a href="https://open.substack.com/pub/mikamama" target="_blank" rel="noopener noreferrer" class="cta-link cta-link--mail">
+            <span class="cta-link__icon" aria-hidden="true">✉</span><span><small>【私のメルマガ】</small><strong>783名が参加はこちら</strong></span><b aria-hidden="true">›</b>
+          </a>
+        </div>
+        <p class="cta__note">いつでもご自身のペースでお楽しみいただけます</p>
+      </section>
+    </main>
+
+    <footer><span aria-hidden="true">✦</span><strong>5つで1週間の献立</strong><small>毎日の食卓に、ゆとりと笑顔を。</small></footer>
+
+    <dialog id="shopping-dialog" aria-labelledby="shopping-title">
+      <div class="dialog-head"><div><small>WEEKLY SHOPPING LIST</small><h2 id="shopping-title">今週の買い物リスト</h2></div><button id="close-dialog" type="button" aria-label="閉じる">×</button></div>
+      <p>人数やご家庭の食べる量に合わせて調整してください。</p>
+      <div id="shopping-list" class="shopping-list"></div>
+      <button class="primary-button" id="done-button" type="button">リストを閉じる</button>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
