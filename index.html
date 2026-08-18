@@ -47,10 +47,32 @@
         <p class="price-note">※食材価格は地域・店舗・時期によって異なります。表示金額は目安です。</p>
       </section>
 
-      <section class="plan section" id="plan" aria-labelledby="plan-title" hidden>
+      <section class="selector section" id="selector" aria-labelledby="selector-title" hidden>
         <div class="section-heading">
           <span class="section-heading__number">02</span>
-          <div><p id="course-label">5,000円コース</p><h2 id="plan-title">今週の5つの食材</h2></div>
+          <div><p id="course-label">5,000円コース</p><h2 id="selector-title">食材を5つ選ぶ</h2></div>
+        </div>
+        <p class="section-intro">ボタンまたは文字入力から、ご家庭にあるもの・食べたいものを選んでください。</p>
+        <div class="selection-status" aria-live="polite"><strong id="selection-count">0 / 5</strong><span>選択中</span></div>
+        <div id="candidate-groups" class="candidate-groups"></div>
+
+        <form id="custom-food-form" class="custom-food-form">
+          <label for="custom-food">その他の食材を入力</label>
+          <div><input id="custom-food" type="text" maxlength="20" placeholder="例：アボカド、れんこん、牛肉" autocomplete="off" /><button type="submit">追加</button></div>
+          <p id="input-message" class="input-message" aria-live="polite"></p>
+        </form>
+
+        <div class="selected-box">
+          <h3>選んだ5つの食材</h3>
+          <div id="selected-foods" class="selected-foods"><p class="empty-selection">食材を選ぶと、ここに表示されます</p></div>
+        </div>
+        <button class="primary-button create-button" id="create-plan-button" type="button" disabled>この5つで1週間の献立を作る</button>
+      </section>
+
+      <section class="plan section" id="plan" aria-labelledby="plan-title" hidden>
+        <div class="section-heading">
+          <span class="section-heading__number">03</span>
+          <div><p>YOUR WEEKLY MENU</p><h2 id="plan-title">選んだ5つの食材</h2></div>
         </div>
         <p class="section-intro">この5つを中心に、1週間おいしく使い回します。</p>
         <div class="ingredients" id="ingredients"></div>
@@ -64,7 +86,7 @@
 
         <div class="plan-actions">
           <button class="primary-button" id="shopping-button" type="button"><span aria-hidden="true">▤</span> 買い物リストを見る</button>
-          <button class="secondary-button" id="shuffle-button" type="button"><span aria-hidden="true">↻</span> 別の5食材で作り直す</button>
+          <button class="secondary-button" id="reselect-button" type="button"><span aria-hidden="true">↻</span> 食材を選び直す</button>
         </div>
         <p class="price-note">※食材価格は地域・店舗・時期によって異なります。表示金額は目安です。</p>
       </section>
