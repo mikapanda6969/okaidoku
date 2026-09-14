@@ -80,11 +80,13 @@
         <div class="plan-heading">
           <p>MONDAY — SUNDAY</p>
           <h2>1週間の夕食献立</h2>
-          <span>無理なく作れる、やさしいレシピです</span>
+          <span id="plan-course-description">無理なく作れる、やさしいレシピです</span>
         </div>
+        <div class="course-summary" id="course-summary" aria-live="polite"></div>
         <div class="menu-list" id="menu-list"></div>
 
         <div class="plan-actions">
+          <button class="primary-button regenerate-button" id="regenerate-button" type="button"><span aria-hidden="true">✦</span> もう一度提案する</button>
           <button class="primary-button" id="shopping-button" type="button"><span aria-hidden="true">▤</span> 買い物リストを見る</button>
           <button class="secondary-button" id="reselect-button" type="button"><span aria-hidden="true">↻</span> 食材を選び直す</button>
         </div>
